@@ -13,7 +13,7 @@
 - Визуальное отображение оставшихся жизней (иконки кораблей)
 - Возможность запуска как из исходного кода, так и в виде standalone `.exe` файла (Windows)
 
-## 🛠 Технологии
+## Технологии
 
 - Python 3.14
 - Pygame CE (Community Edition) — для графики, звука и игровой логики
@@ -27,3 +27,64 @@
    ```bash
    git clone https://github.com/твой-логин/alien-invasion.git
    cd alien-invasion
+   
+## Вариант 2: Запуск готового .exe (Windows)
+
+Скачай архив с игрой из раздела Releases.
+Распакуй в любую папку.
+Запусти alien_invasion.exe.
+
+🎮 Управление
+Клавиша	Действие
+Стрелка вправо	Движение корабля вправо
+Стрелка влево	Движение корабля влево
+Пробел	Выстрел
+Esc	Пауза / Возобновление игры
+R	Перезапуск игры (в любом состоянии)
+Q	Выход из игры
+📁 Структура проекта
+text
+alien-invasion/
+
+├── alien_invasion.py       # главный файл игры
+
+├── settings.py             # настройки
+
+├── game_stats.py           # статистика (жизни, счёт, уровень)
+
+├── ship.py                 # класс корабля
+
+├── alien.py                # класс пришельца
+
+├── bullet.py               # класс пули
+
+├── button.py               # класс кнопок
+
+├── scoreboard.py           # отображение счёта и жизней
+
+├── utils.py                # вспомогательные функции (пути к ресурсам)
+
+├── requirements.txt        # зависимости
+
+├── images/                 # папка с изображениями
+
+│   ├── ship.png
+
+│   ├── alien.png
+
+│   └── bg.jpg
+
+├── sounds/                 # папка со звуками
+│   ├── laser.wav
+
+│   ├── explosion.wav
+│   └── background_music.mp3
+└── README.md               # этот файл
+
+🧰 Сборка .exe (для разработчиков)
+Если хочешь собрать игру в один исполняемый файл самостоятельно:
+
+bash
+pip install pyinstaller
+pyinstaller --noconsole --onefile --add-data "images;images" --add-data "sounds;sounds" alien_invasion.py
+Готовый .exe появится в папке dist.
